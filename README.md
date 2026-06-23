@@ -1,10 +1,7 @@
 # Portable crossword
-
-Програма для визуального создания кроссвордов с последующим импортом в виде HTML или в виде изображения. Примечание: в виде HTML можно импортировать как полноценную интерактивную игру, а в виде изображения только как статическую картинку. 
-
+A program for visually creating crosswords with subsequent import as HTML or as an image.
 ## Сборка
-
 ```shell
 npm run build
 ```
-Это создаст каталог dist в котором будет находится сбранный проект. Откройте index.html и можете полноценно пользоваться программой.
+This will create a dist directory containing the built project. Open index.html and you can use the program fully.
