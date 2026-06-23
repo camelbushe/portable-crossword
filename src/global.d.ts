@@ -1,0 +1,1 @@
+declare type Language = "ru" | "en"
