@@ -1,6 +1,6 @@
 # Portable crossword
 A program for visually creating crosswords with subsequent import as HTML or as an image.
-## Сборка
+## Building
 ```shell
 npm run build
 ```
