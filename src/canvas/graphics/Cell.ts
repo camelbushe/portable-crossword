@@ -3,7 +3,9 @@
  * Licensed under GNU General Public License v3.0 only.
  */
 
-import { Container, Graphics, Sprite, Text, ObservablePoint, Application } from "pixi.js";
+import { 
+  Container, Graphics, Sprite, Text, ObservablePoint, type Renderer 
+} from "pixi.js";
 import { isEqual } from "lodash";
 
 class Cell extends Container {
@@ -16,7 +18,7 @@ class Cell extends Container {
     container.position.set(0, 0)
   };
 
-  constructor(text: string, size: number, application: Application) {
+  constructor(text: string, size: number, renderer: Renderer) {
     super()
 
     this.size = size;
@@ -32,7 +34,7 @@ class Cell extends Container {
     const backgroundSpriteGraphics = new Graphics()
       .rect(0, 0, this.size, this.size).fill(0x000000);
     this.backgroundSprite = new Sprite({
-      texture: application.renderer.generateTexture(backgroundSpriteGraphics)
+      texture: renderer.generateTexture(backgroundSpriteGraphics)
     });
     this.align(this.backgroundSprite);
 

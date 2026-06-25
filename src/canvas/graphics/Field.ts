@@ -4,7 +4,8 @@
  */
 
 import { 
-  Application, Container, Graphics, Ticker, TilingSprite
+  Container, Graphics, Ticker, TilingSprite,
+  type Renderer
 } from "pixi.js";
 import MovementActionController from "../control/MovementActionController";
 import ZoomActionController from "../control/ZoomActionController";
@@ -22,7 +23,7 @@ class Field extends Container {
     cellSize: number, 
     width: number, 
     height: number, 
-    application: Application
+    renderer: Renderer
   ) {
     super()
 
@@ -33,7 +34,7 @@ class Field extends Container {
       .rect(cellSize, cellSize, cellSize, cellSize).fill(0xEEEEEE)
 
     this.background = new TilingSprite({
-      texture: application.renderer.generateTexture(backgroundTextureGraphics),
+      texture: renderer.generateTexture(backgroundTextureGraphics),
       width,
       height,
     })
