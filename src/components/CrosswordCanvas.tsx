@@ -14,7 +14,7 @@ const CrosswordCanvas = memo(() => {
             if (!canvasRef.current) return;
             const crossword = new Crossword(canvasRef.current);
             await crossword.initialize()   
-            crossword.addCell(5, 5)
+            crossword.addCell(6, 5)
         })();
     }, [])
 

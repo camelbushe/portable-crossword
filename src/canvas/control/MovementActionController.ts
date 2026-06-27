@@ -13,18 +13,16 @@ interface MovementAction {
   y: number
 }
 
-class MovementActionController extends ActionController<MovementActionListener> {
-  private getLocalEventPosition(event: FederatedPointerEvent) {
-    const localPosition = event.getLocalPosition(event.target)
-    return {
-      x: localPosition.x,
-      y: localPosition.y
-    }
-  }
+class MovementActionController 
+  extends ActionController<MovementActionListener> {
+    
   private handlePointerDown = (event: FederatedPointerEvent) => {
     this.isDragging = true;
 
-    this.offset = this.getLocalEventPosition(event)
+    this.offset = {
+      x: event.clientX,
+      y: event.clientY
+    }
 
     this.target.on('pointermove', this.handlePointerMove);
     this.target.on('pointerup', this.stopDraging);
@@ -33,16 +31,17 @@ class MovementActionController extends ActionController<MovementActionListener> 
   private handlePointerMove = (event: FederatedPointerEvent) => {
     if (!this.isDragging) return;
 
-    const eventLocalPosition = this.getLocalEventPosition(event)
-
     this.listeners.forEach(listener => {
       listener({
-        x: eventLocalPosition.x - this.offset.x,
-        y: eventLocalPosition.y - this.offset.y
+        x: event.clientX - this.offset.x,
+        y: event.clientY - this.offset.y
       })
     })
 
-    this.offset = eventLocalPosition;
+    this.offset = {
+      x: event.clientX,
+      y: event.clientY
+    };
   }
   private stopDraging = () => {
     this.isDragging = false

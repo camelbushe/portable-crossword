@@ -3,7 +3,7 @@
  * Licensed under GNU General Public License v3.0 only.
  */
 
-import { 
+import {
   Container, Graphics, Ticker, TilingSprite,
   type Renderer
 } from "pixi.js";
@@ -20,9 +20,9 @@ class Field extends Container {
   private background;
 
   constructor(
-    cellSize: number, 
-    width: number, 
-    height: number, 
+    cellSize: number,
+    width: number,
+    height: number,
     renderer: Renderer
   ) {
     super()
@@ -38,19 +38,24 @@ class Field extends Container {
       width,
       height,
     })
-    
+
+    const mask = new Graphics()
+      .rect(0, 0, width, height).fill(0xffffff);
+    this.mask = mask;
+
+    this.addChild(mask);
     this.addChild(this.background);
     this.addChild(this.container);
 
     const movementActionController = new MovementActionController(this);
-    movementActionController.addListener(({x, y}) => {
-        this.moveFieldOn(x, y)
-      }
+    movementActionController.addListener(({ x, y }) => {
+      this.moveFieldOn(x, y)
+    }
     )
     movementActionController.startListening();
 
     const zoomActionController = new ZoomActionController(this)
-    zoomActionController.addListener(({factor}) => {
+    zoomActionController.addListener(({ factor }) => {
       this.fieldScale = factor
     })
     zoomActionController.startListening()
