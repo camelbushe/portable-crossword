@@ -3,4 +3,9 @@
  * Licensed under GNU General Public License v3.0 only.
  */
 
-declare type Language = "ru" | "en"
+export type Language = "ru" | "en"
+
+export interface Point {
+  x: number,
+  y: number
+}

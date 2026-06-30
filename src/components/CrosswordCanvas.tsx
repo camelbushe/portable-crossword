@@ -13,14 +13,41 @@ const CrosswordCanvas = memo(() => {
         (async () => {
             if (!canvasRef.current) return;
             const crossword = new Crossword(canvasRef.current);
-            await crossword.initialize()   
-            crossword.addCell(6, 5)
+            await crossword.initialize();
+
+            const scheme = {
+                formatVersion: "development",
+                wods: [
+                    {
+                        text: "Hello",
+                        direction: "horizontal" as "vertical" | "horizontal",
+                        startPoint: {
+                            x: 0,
+                            y: 0
+                        }
+                    },
+                    {
+                        text: "Legend",
+                        direction: "vertical" as "vertical" | "horizontal",
+                        startPoint: {
+                            x: 1,
+                            y: -1
+                        }
+                    }
+                ]
+            }
+
+            crossword.import(scheme.wods)
         })();
     }, [])
 
     return (
         <canvas 
             ref={canvasRef}
+            style={{
+                width: "100vw",
+                height: "100vh"
+            }}
         ></canvas>
     )
 })

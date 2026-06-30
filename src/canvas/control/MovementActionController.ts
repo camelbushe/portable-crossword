@@ -3,15 +3,13 @@
  * Licensed under GNU General Public License v3.0 only.
  */
 
-import type { Container, FederatedPointerEvent } from "pixi.js";
+import { type Container, type FederatedPointerEvent } from "pixi.js";
 import ActionController from "./ActionController";
+import type { Point } from "../../types";
 
 type MovementActionListener = (action: MovementAction) => void
 
-interface MovementAction {
-  x: number,
-  y: number
-}
+type MovementAction = Point
 
 class MovementActionController 
   extends ActionController<MovementActionListener> {
