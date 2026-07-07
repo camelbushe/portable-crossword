@@ -6,11 +6,28 @@
 import { memo } from "react";
 
 import CrosswordCanvas from "./CrosswordCanvas";
+import Dropdown from "./Dropdown";
 
 const Editor = memo(() => {
     return (
         <div>
             <CrosswordCanvas />
+            <Dropdown 
+                selected={1}
+                values={[
+                    {
+                        title: "Second",
+                        value: 5,
+                    },
+                    {
+                        title: "Third",
+                        value: 3,
+                    }
+                ]}
+                onSelect={(value) => {
+                    console.log(value.title)
+                }}
+            />
         </div>
     )
 })

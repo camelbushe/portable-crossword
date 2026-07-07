@@ -1,0 +1,10 @@
+@import "./palette.css";
+
+:root {
+  --theme-primary: var(--color-blue-500);
+  --theme-secondary: var(--color-gray-150);
+
+  --theme-text-on-secondary: var(--color-gray-900);
+
+  --spacing-small: 8px;
+}

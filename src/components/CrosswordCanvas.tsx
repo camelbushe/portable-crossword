@@ -45,8 +45,8 @@ const CrosswordCanvas = memo(() => {
         <canvas 
             ref={canvasRef}
             style={{
-                width: "100vw",
-                height: "100vh"
+                width: "50vw",
+                height: "50vh"
             }}
         ></canvas>
     )

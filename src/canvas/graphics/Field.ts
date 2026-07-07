@@ -7,7 +7,7 @@ import {
   Container, Graphics, Ticker, TilingSprite,
   type Renderer
 } from "pixi.js";
-import MovementActionController from "../control/MovementActionController";
+import DragActionController from "../control/DragActionController";
 import ZoomActionController from "../control/ZoomActionController";
 
 interface Updatebale {
@@ -47,12 +47,12 @@ class Field extends Container {
     this.addChild(this.background);
     this.addChild(this.container);
 
-    const movementActionController = new MovementActionController(this);
-    movementActionController.addListener(({ x, y }) => {
+    const dragActionController = new DragActionController(this);
+    dragActionController.addListener(({ x, y }) => {
       this.moveFieldOn(x, y)
     }
     )
-    movementActionController.startListening();
+    dragActionController.startListening();
 
     const zoomActionController = new ZoomActionController(this)
     zoomActionController.addListener(({ factor }) => {

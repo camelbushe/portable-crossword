@@ -1,0 +1,7 @@
+@import "./variables/themes.css";
+
+.dropdown {
+  padding: var(--spacing-small);
+  background-color: var(--theme-secondary);
+  color: var(--theme-text-on-secondary);
+}

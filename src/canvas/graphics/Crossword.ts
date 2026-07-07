@@ -49,7 +49,7 @@ class Crossword {
       this.canvas.height,
       this.application.renderer
     );
-    this.application.stage.addChild(this.field)
+    this.application.stage.addChild(this.field);
   }
   public import(words: Array<Word>): void {
     words.forEach(word => {

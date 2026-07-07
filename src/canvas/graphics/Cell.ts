@@ -24,12 +24,12 @@ class Cell extends Container {
     this.textContent = new Text({
       text: text,
       style: {
-        fill: 0xFFFFFF,
+        fill: "black",
       },
     });
 
     const backgroundSpriteGraphics = new Graphics()
-      .rect(0, 0, this.size, this.size).fill(0x000000);
+      .rect(0, 0, this.size, this.size).fill("white");
     this.backgroundSprite = new Sprite({
       texture: renderer.generateTexture(backgroundSpriteGraphics)
     });

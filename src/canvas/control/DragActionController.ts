@@ -7,12 +7,11 @@ import { type Container, type FederatedPointerEvent } from "pixi.js";
 import ActionController from "./ActionController";
 import type { Point } from "../../types";
 
-type MovementActionListener = (action: MovementAction) => void
+type DragActionListener =  (action: DragAction) => void
+type DragAction = Point
 
-type MovementAction = Point
-
-class MovementActionController 
-  extends ActionController<MovementActionListener> {
+class DragActionController 
+  extends ActionController<DragActionListener> {
     
   private handlePointerDown = (event: FederatedPointerEvent) => {
     this.isDragging = true;
@@ -62,4 +61,4 @@ class MovementActionController
   }
 }
 
-export default MovementActionController;
+export default DragActionController;
