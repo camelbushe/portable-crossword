@@ -1,0 +1,56 @@
+/**
+ * Copyright (C) 2026 camelbushe (https://github.com/camelbushe/portable-crossword)
+ * Licensed under GNU General Public License v3.0 only.
+ */
+
+@import "../variables/themes.css";
+
+.dropdown {
+  color: var(--theme-text-on-secondary);
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-medium);
+}
+
+.dropdown_value.selected {
+  background-color: var(--theme-primary);
+  color: var(--theme-text-on-primary)
+}
+
+.dropdown_header {
+  padding: var(--spacing-large);
+  background-color: var(--theme-secondary);
+  margin-bottom: var(--spacing-medium);
+  border-radius: var(--border-radius-small);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dropdown_body {
+  border-radius: var(--border-radius-small);
+  padding: var(--spacing-small);
+  background-color: var(--theme-secondary);
+}
+
+.dropdown_value {
+  border-radius: var(--border-radius-small);
+  padding: var(--spacing-large);
+  margin-bottom: var(--spacing-medium);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dropdown_value:last-child {
+  margin-bottom: 0;
+}
+
+.dropdown_header:hover {
+  background-color: var(--theme-secondary-hover-dark);
+}
+
+.dropdown_value:not(.selected):hover {
+  background-color: var(--theme-secondary-hover-light);
+}
+

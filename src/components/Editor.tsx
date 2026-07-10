@@ -8,6 +8,9 @@ import { memo } from "react";
 import CrosswordCanvas from "./CrosswordCanvas";
 import Dropdown from "./Dropdown";
 
+import "../styles/reset.css"
+import "../styles/fonts.css"
+
 const Editor = memo(() => {
     return (
         <div>

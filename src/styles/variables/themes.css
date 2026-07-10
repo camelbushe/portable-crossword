@@ -1,10 +1,28 @@
+/**
+ * Copyright (C) 2026 camelbushe (https://github.com/camelbushe/portable-crossword)
+ * Licensed under GNU General Public License v3.0 only.
+ */
+
 @import "./palette.css";
 
 :root {
-  --theme-primary: var(--color-blue-500);
-  --theme-secondary: var(--color-gray-150);
+  --font-family-main: "Nunito", sans-serif;
 
+  --font-size-medium: 17px;
+
+  --font-weight-medium: 500;
+
+  --theme-primary: var(--color-blue-500);
+  --theme-secondary: var(--color-gray-200);
+  --theme-secondary-hover-light: var(--color-gray-100);
+  --theme-secondary-hover-dark: var(--color-gray-300);
+
+  --theme-text-on-primary: var( --color-white);
   --theme-text-on-secondary: var(--color-gray-900);
 
-  --spacing-small: 8px;
+  --spacing-small: 5px;
+  --spacing-medium: 10px;
+  --spacing-large: 15px;
+
+  --border-radius-small: 15px;
 }

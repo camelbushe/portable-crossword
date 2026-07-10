@@ -1,0 +1,15 @@
+/**
+ * Copyright (C) 2026 camelbushe (https://github.com/camelbushe/portable-crossword)
+ * Licensed under GNU General Public License v3.0 only.
+ */
+
+@font-face {
+  font-family: 'Nunito';
+  src: 
+        url('assets/fonts/nunito-medium.woff2') format('woff2'),
+        url('assets/fonts/nunito-medium.woff') format('woff'),
+        url('assets/fonts/nunito-medium.eot') format('eot');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}

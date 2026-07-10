@@ -1,6 +1,15 @@
+/**
+ * Copyright (C) 2026 camelbushe (https://github.com/camelbushe/portable-crossword)
+ * Licensed under GNU General Public License v3.0 only.
+ */
+
 :root {
   --color-blue-500: #6366f1;
 
-  --color-gray-150: #e8eaf6;
+  --color-gray-100: #f5f7ff;
+  --color-gray-200: #e8eaf6;
+  --color-gray-300: #d9ddeb;
   --color-gray-900: #2a2631;
+
+  --color-white: #ffffff;
 }

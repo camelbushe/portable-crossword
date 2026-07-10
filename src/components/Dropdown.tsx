@@ -6,7 +6,11 @@
 import { memo, useState, type ReactElement } from "react";
 import { useOutsideClick } from "../hooks/useOutsideClick";
 
-import "../styles/dropdown.css"
+import ArrowUp from "./icons/ArrowUp";
+import ArrowDown from "./icons/ArrowDown";
+import Tick from "./icons/Tick";
+
+import "../styles/components/dropdown.css"
 
 interface DropdownValue<T> {
   title: string,
@@ -19,9 +23,11 @@ interface DropdownProps<T> {
   onSelect?: (value: DropdownValue<T>) => void
 }
 
-function DropdownComponent<T>({ selected, values, onSelect }: DropdownProps<T>) {
+function DropdownComponent<T>(
+  { selected, values, onSelect }: DropdownProps<T>
+) {
   const [isBodyOpen, setIsBodyOpen] = useState(false);
-  const [selectedValue, setSelectedValue] = useState(values[selected]);
+  const [selectedIndex, setSelectedIndex] = useState(selected);
 
   const dropdownRef = useOutsideClick(() => {
     setIsBodyOpen(false);
@@ -32,20 +38,39 @@ function DropdownComponent<T>({ selected, values, onSelect }: DropdownProps<T>) 
       <div className="dropdown_header" onClick={() =>
         setIsBodyOpen(!isBodyOpen)
       }
-      >{selectedValue.title}</div>
+      >
+        {values[selectedIndex].title}
+        {isBodyOpen ?
+          <ArrowUp /> :
+          <ArrowDown />
+        }
+      </div>
       {
         isBodyOpen && (
           <ul className="dropdown_body">
-            {values.map((value, index) =>
-              <li className="dropdown_value" key={index} onClick={() => {
-                setIsBodyOpen(false);
-                setSelectedValue(values[index]);
+            {values.map((value, index) => {
+              const isSelected = index == selectedIndex;
 
-                if (onSelect) {
-                  onSelect(selectedValue)
-                }
-              }}
-              >{value.title}</li>
+              return (
+                <li 
+                  className={`dropdown_value ${isSelected ? "selected" : ""}`}
+                  key={index} 
+                  onClick={() => {
+                    setIsBodyOpen(false);
+                    setSelectedIndex(index);
+
+                    if (onSelect) {
+                      onSelect(values[selectedIndex])
+                    }
+                  }}
+                >
+                  {value.title}
+                  {isSelected &&
+                    <Tick />
+                  }
+                </li>
+              )
+            }
             )}
           </ul>)
       }
