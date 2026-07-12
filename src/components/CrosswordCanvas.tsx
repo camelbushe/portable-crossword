@@ -4,7 +4,8 @@
  */
 
 import { memo, useEffect, useRef } from "react";
-import Crossword from "../canvas/graphics/Crossword";
+import { Application } from "pixi.js";
+import ClassicCrossword from "../canvas/crosswords/ClassicCrossword";
 
 const CrosswordCanvas = memo(() => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -12,8 +13,21 @@ const CrosswordCanvas = memo(() => {
     useEffect(() => {
         (async () => {
             if (!canvasRef.current) return;
-            const crossword = new Crossword(canvasRef.current);
-            await crossword.initialize();
+            const canvasRect = canvasRef.current.getBoundingClientRect();
+
+            const size = {
+                width: canvasRect.width * devicePixelRatio,
+                height: canvasRect.height * devicePixelRatio
+            }
+
+            const application = new Application()
+            await application.init({
+                ...size,
+                canvas: canvasRef.current,
+                eventMode: "dynamic"
+            })
+
+            const classicCrossword = new ClassicCrossword(size, application)
 
             const scheme = {
                 formatVersion: "development",
@@ -37,12 +51,12 @@ const CrosswordCanvas = memo(() => {
                 ]
             }
 
-            crossword.import(scheme.wods)
+            classicCrossword.import(scheme.wods)
         })();
     }, [])
 
     return (
-        <canvas 
+        <canvas
             ref={canvasRef}
             style={{
                 width: "50vw",

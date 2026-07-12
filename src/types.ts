@@ -9,3 +9,8 @@ export interface Point {
   x: number,
   y: number
 }
+
+export interface CrosswordSize {
+  width: number,
+  height: number
+}

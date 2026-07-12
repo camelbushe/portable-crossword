@@ -40,10 +40,7 @@ function DropdownComponent<T>(
       }
       >
         {values[selectedIndex].title}
-        {isBodyOpen ?
-          <ArrowUp /> :
-          <ArrowDown />
-        }
+        {isBodyOpen ? <ArrowUp /> : <ArrowDown />}
       </div>
       {
         isBodyOpen && (
@@ -52,9 +49,9 @@ function DropdownComponent<T>(
               const isSelected = index == selectedIndex;
 
               return (
-                <li 
+                <li
                   className={`dropdown_value ${isSelected ? "selected" : ""}`}
-                  key={index} 
+                  key={index}
                   onClick={() => {
                     setIsBodyOpen(false);
                     setSelectedIndex(index);
@@ -65,9 +62,7 @@ function DropdownComponent<T>(
                   }}
                 >
                   {value.title}
-                  {isSelected &&
-                    <Tick />
-                  }
+                  {isSelected && <Tick />}
                 </li>
               )
             }
