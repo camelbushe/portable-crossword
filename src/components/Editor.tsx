@@ -7,9 +7,11 @@ import { memo } from "react";
 
 import CrosswordCanvas from "./CrosswordCanvas";
 import Dropdown from "./Dropdown";
+import Button from "./Button";
 
 import "../styles/reset.css"
 import "../styles/fonts.css"
+import Tick from "./icons/Tick";
 
 const Editor = memo(() => {
     return (
@@ -31,6 +33,9 @@ const Editor = memo(() => {
                     console.log(value.title)
                 }}
             />
+            <Button title="Click me" icon={Tick} onClick={() => {
+                console.log("Click button")
+            }}/>
         </div>
     )
 })

@@ -1,0 +1,36 @@
+/**
+ * Copyright (C) 2026 camelbushe (https://github.com/camelbushe/portable-crossword)
+ * Licensed under GNU General Public License v3.0 only.
+ */
+
+@import "../variables/themes.css";
+
+.button {
+  padding: var(--spacing-large);
+  border-radius: var(--border-radius-small);
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-medium);
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-medium);
+  width: 300px;
+}
+
+.button.primary {
+  background-color: var(--theme-primary);
+  color: var(--theme-text-on-primary)
+}
+
+.button.secondary {
+  background-color: var(--theme-secondary);
+  color: var(--theme-text-on-secondary);
+}
+
+.button_icon.primary {
+  fill: var(--theme-text-on-primary);
+}
+
+.button_icon.secondary {
+  fill: var(--theme-text-on-secondary);
+}

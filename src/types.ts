@@ -14,3 +14,7 @@ export interface CrosswordSize {
   width: number,
   height: number
 }
+
+export interface SVGProps {
+  className?: string
+}

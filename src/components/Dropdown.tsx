@@ -62,7 +62,9 @@ function DropdownComponent<T>(
                   }}
                 >
                   {value.title}
-                  {isSelected && <Tick />}
+                  {isSelected && 
+                    <Tick className="dropdown_selected-value-icon" />
+                  }
                 </li>
               )
             }
