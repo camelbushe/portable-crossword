@@ -15,6 +15,7 @@
   justify-content: center;
   gap: var(--spacing-medium);
   width: 300px;
+  align-items: center;
 }
 
 .button.primary {
@@ -28,9 +29,9 @@
 }
 
 .button_icon.primary {
-  fill: var(--theme-text-on-primary);
+  stroke: var(--theme-text-on-primary);
 }
 
 .button_icon.secondary {
-  fill: var(--theme-text-on-secondary);
+  stroke: var(--theme-text-on-secondary);
 }

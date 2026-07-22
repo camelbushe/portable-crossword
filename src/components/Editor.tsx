@@ -12,10 +12,12 @@ import Button from "./Button";
 import "../styles/reset.css"
 import "../styles/fonts.css"
 import Tick from "./icons/Tick";
+import Header from "./Header";
 
 const Editor = memo(() => {
     return (
         <div>
+            <Header />
             <CrosswordCanvas />
             <Dropdown 
                 selected={1}

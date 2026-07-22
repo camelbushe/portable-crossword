@@ -10,15 +10,21 @@ import "../styles/components/button.css"
 interface ButtonProps extends ComponentPropsWithRef<'button'> {
   title: string,
   variant?: "primary" | "secondary",
-  icon?: ComponentType<{className: string}>
+  icon?: ComponentType<{ className: string }>
 }
 
 const Button = memo(
-  ({ title, variant = "primary", icon: Icon, ...props }: ButtonProps) => {
+  ({
+    title,
+    variant = "primary",
+    icon: Icon,
+    className,
+    ...props
+  }: ButtonProps) => {
     return (
-      <button className={`button ${variant}`} {...props}>
+      <button className={`button ${variant} ${className}`} {...props}>
         {title}
-        {Icon && <Icon className={`button_icon ${variant}`}/>}
+        {Icon && <Icon className={`button_icon ${variant}`} />}
       </button>
     )
   })
