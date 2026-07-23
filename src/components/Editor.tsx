@@ -13,6 +13,8 @@ import "../styles/reset.css"
 import "../styles/fonts.css"
 import Tick from "./icons/Tick";
 import Header from "./Header";
+import TextInput from "./TextInput";
+import Textarea from "./Textarea";
 
 const Editor = memo(() => {
     return (
@@ -38,6 +40,8 @@ const Editor = memo(() => {
             <Button title="Click me" icon={Tick} onClick={() => {
                 console.log("Click button")
             }}/>
+            <TextInput placeholder="Enter text here" />
+            <Textarea placeholder="Enter a clue here..." />
         </div>
     )
 })

@@ -21,7 +21,7 @@ const Header = () => {
             // Importing crossword here
           }}
         />
-        <Button className="header_button" title="Expot" icon={Export}
+        <Button className="header_button" title="Export" icon={Export}
           onClick={() => {
             // Exporting crossword here
           }} />

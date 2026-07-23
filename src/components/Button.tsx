@@ -23,8 +23,8 @@ const Button = memo(
   }: ButtonProps) => {
     return (
       <button className={`button ${variant} ${className}`} {...props}>
-        {title}
         {Icon && <Icon className={`button_icon ${variant}`} />}
+        {title}
       </button>
     )
   })

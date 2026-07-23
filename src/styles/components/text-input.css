@@ -5,24 +5,15 @@
 
 @import "../variables/themes.css";
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.text-input {
   padding: var(--spacing-large);
-  border: var(--border-size-small) solid var(--theme-secondary);
+  background-color: var(--theme-secondary);
+  border-radius: var(--border-radius-small);
   font-family: var(--font-family-main);
   font-size: var(--font-size-medium);
   font-weight: var(--font-weight-medium);
 }
 
-.header_buttons {
-  display: flex;
-  justify-content: space-between;
-  gap: var(--spacing-large);
-  height: 100%;
-}
-
-.header_button {
-  width: fit-content;
+.text-input:focus {
+  outline: 3px solid var(--theme-primary);
 }
