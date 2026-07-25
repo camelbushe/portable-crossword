@@ -16,9 +16,13 @@
   --theme-secondary: var(--color-gray-200);
   --theme-secondary-hover-light: var(--color-gray-100);
   --theme-secondary-hover-dark: var(--color-gray-300);
+  --theme-destructive: var(--color-red-500);
+  --theme-disabled: var(--color-gray-400);
 
   --theme-text-on-primary: var( --color-white);
   --theme-text-on-secondary: var(--color-gray-900);
+  --theme-text-on-destructive: var(--color-white);
+  --theme-text-on-disabled: var(--color-white);
 
   --spacing-small: 5px;
   --spacing-medium: 10px;

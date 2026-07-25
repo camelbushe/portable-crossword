@@ -9,7 +9,10 @@
   --color-gray-100: #f5f7ff;
   --color-gray-200: #e8eaf6;
   --color-gray-300: #d9ddeb;
+  --color-gray-400: #c2c5d1;
   --color-gray-900: #2a2631;
+
+  --color-red-500: #fd4949;
 
   --color-white: #ffffff;
 }

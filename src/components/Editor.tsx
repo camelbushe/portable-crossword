@@ -6,42 +6,36 @@
 import { memo } from "react";
 
 import CrosswordCanvas from "./CrosswordCanvas";
-import Dropdown from "./Dropdown";
 import Button from "./Button";
-
-import "../styles/reset.css"
-import "../styles/fonts.css"
-import Tick from "./icons/Tick";
 import Header from "./Header";
 import TextInput from "./TextInput";
 import Textarea from "./Textarea";
+import Word from "./Word";
+
+import "../styles/reset.css"
+import "../styles/fonts.css"
+import "../styles/components/editor.css"
 
 const Editor = memo(() => {
     return (
-        <div>
+        <div className="editor">
             <Header />
-            <CrosswordCanvas />
-            <Dropdown 
-                selected={1}
-                values={[
-                    {
-                        title: "Second",
-                        value: 5,
-                    },
-                    {
-                        title: "Third",
-                        value: 3,
-                    }
-                ]}
-                onSelect={(value) => {
-                    console.log(value.title)
-                }}
-            />
-            <Button title="Click me" icon={Tick} onClick={() => {
-                console.log("Click button")
-            }}/>
-            <TextInput placeholder="Enter text here" />
-            <Textarea placeholder="Enter a clue here..." />
+            <main className="editor_workplace">
+                <aside className="editor_side-panel"></aside>
+                <section className="editor_crossword">
+                    <CrosswordCanvas />
+                </section>
+                <aside className="editor_side-panel editor_words-panel">
+                    <h3>Add word</h3>
+                    <TextInput placeholder="Enter a word..." disabled={true} />
+                    <Textarea placeholder="Enter a word clue" disabled={true} />
+                    <Button variant="destructive" title="Reset" disabled={true} />
+                    <h3>Words list</h3>
+                    <li>
+                        <Word word="Hello" clue="We usually say it when meet each other" />
+                    </li>
+                </aside>
+            </main>
         </div>
     )
 })

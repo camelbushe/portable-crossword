@@ -9,7 +9,7 @@ import "../styles/components/button.css"
 
 interface ButtonProps extends ComponentPropsWithRef<'button'> {
   title: string,
-  variant?: "primary" | "secondary",
+  variant?: "primary" | "secondary" | "destructive",
   icon?: ComponentType<{ className: string }>
 }
 

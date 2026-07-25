@@ -14,7 +14,6 @@
   display: flex;
   justify-content: center;
   gap: var(--spacing-medium);
-  width: 300px;
   align-items: center;
 }
 
@@ -28,10 +27,28 @@
   color: var(--theme-text-on-secondary);
 }
 
+.button.destructive {
+  background-color: var(--theme-destructive);
+  color: var(--theme-text-on-destructive);
+}
+
 .button_icon.primary {
   stroke: var(--theme-text-on-primary);
 }
 
 .button_icon.secondary {
   stroke: var(--theme-text-on-secondary);
+}
+
+.button_icon.destuctive {
+  stroke: var(--theme-text-on-destructive);
+}
+
+.button:disabled {
+  background-color: var(--theme-disabled);
+  color: var(--theme-text-on-disabled);
+}
+
+.button:disabled .button_icon {
+  stroke: var(--theme-text-on-disabled);
 }
