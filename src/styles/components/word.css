@@ -7,5 +7,28 @@
 
 .word {
   background-color: var(--theme-secondary);
-  padding: var(--sapacing-large);
+  padding: var(--spacing-large);
+  border-radius: var(--border-radius-medium);
+  overflow: hidden;
+}
+
+.word_top-elements {
+  margin-bottom: var(--spacing-large);
+  gap: var(--spacing-large);
+  display: flex;
+  align-items: center;
+}
+
+.word_word-input {
+  
+  flex-grow: 1;
+}
+
+.word_delete {
+  height: fit-content;
+}
+
+.word_clue-input {
+  width: 100%;
+  
 }

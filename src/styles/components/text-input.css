@@ -7,7 +7,6 @@
 
 .text-input {
   padding: var(--spacing-large);
-  background-color: var(--theme-secondary);
   border-radius: var(--border-radius-small);
   font-family: var(--font-family-main);
   font-size: var(--font-size-medium);
@@ -16,4 +15,12 @@
 
 .text-input:focus {
   outline: 3px solid var(--theme-primary);
+}
+
+.text-input.secondary {
+  background-color: var(--theme-secondary);
+}
+
+.text-input.on-secondary {
+  background-color: var(--theme-on-secondary);
 }

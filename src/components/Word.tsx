@@ -5,24 +5,31 @@
 
 import { memo } from "react";
 
-import "../styles/components/word.css"
 import TextInput from "./TextInput";
 import Textarea from "./Textarea";
 
+import "../styles/components/word.css"
+import Trash from "./icons/Trash";
+
 interface WordProps {
   word: string,
-  clue: string
+  clue: string,
+  onDelete?: () => void
 }
 
-const Word = memo(({ word, clue }: WordProps) => {
+const Word = memo(({ word, clue, onDelete }: WordProps) => {
   return (
-    <ul className="word">
-      <div>
-        <TextInput value={word} />
-        <button>Delete</button>
+    <li className="word">
+      <div className="word_top-elements">
+        <TextInput className="word_word-input" color="on-secondary"
+          defaultValue={word} />
+        <button className="word_delete" onClick={onDelete}>
+          <Trash />
+        </button>
       </div>
-      <Textarea value={clue} />
-    </ul>
+      <Textarea className="word_clue-input" color="on-secondary" 
+        defaultValue={clue} />
+    </li>
   )
 })
 

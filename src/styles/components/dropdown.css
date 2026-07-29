@@ -6,7 +6,7 @@
 @import "../variables/themes.css";
 
 .dropdown {
-  color: var(--theme-text-on-secondary);
+  color: var(--theme-secondary-text);
   font-family: var(--font-family-main);
   font-size: var(--font-size-medium);
   font-weight: var(--font-weight-medium);
@@ -41,11 +41,11 @@
 
 .dropdown_value.selected {
   background-color: var(--theme-primary);
-  color: var(--theme-text-on-primary)
+  color: var(--theme-primary-text)
 }
 
 .dropdown_selected-value-icon {
-  fill: var(--theme-text-on-primary);
+  fill: var(--theme-primary-text);
 }
 
 .dropdown_value:last-child {

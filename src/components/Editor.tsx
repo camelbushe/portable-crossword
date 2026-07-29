@@ -31,9 +31,11 @@ const Editor = memo(() => {
                     <Textarea placeholder="Enter a word clue" disabled={true} />
                     <Button variant="destructive" title="Reset" disabled={true} />
                     <h3>Words list</h3>
-                    <li>
+                    <ul className="editor_words">
                         <Word word="Hello" clue="We usually say it when meet each other" />
-                    </li>
+                        <Word word="Legend" clue="Somebody legendary" />
+                        <Word word="React" clue="JavaScript library" />
+                    </ul>
                 </aside>
             </main>
         </div>

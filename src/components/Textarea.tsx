@@ -7,10 +7,15 @@ import { memo, type ComponentPropsWithRef } from "react";
 
 import "../styles/components/textarea.css"
 
-const Textarea = memo(({ ...props }: ComponentPropsWithRef<'textarea'>) => {
-  return (
-    <textarea className="textarea" {...props} />
-  )
-})
+interface TextareaProps extends ComponentPropsWithRef<'textarea'> {
+  color?: "secondary" | "on-secondary"
+}
+
+const Textarea = memo(
+  ({ className, color = "secondary", ...props }: TextareaProps) => {
+    return (
+      <textarea className={`textarea ${color} ${className}`} {...props} />
+    )
+  })
 
 export default Textarea

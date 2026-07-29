@@ -19,36 +19,36 @@
 
 .button.primary {
   background-color: var(--theme-primary);
-  color: var(--theme-text-on-primary)
+  color: var(--theme-primary-text)
 }
 
 .button.secondary {
   background-color: var(--theme-secondary);
-  color: var(--theme-text-on-secondary);
+  color: var(--theme-secondary-text);
 }
 
 .button.destructive {
   background-color: var(--theme-destructive);
-  color: var(--theme-text-on-destructive);
+  color: var(--theme-destructive-text);
 }
 
 .button_icon.primary {
-  stroke: var(--theme-text-on-primary);
+  stroke: var(--theme-primary-text);
 }
 
 .button_icon.secondary {
-  stroke: var(--theme-text-on-secondary);
+  stroke: var(--theme-secondary-text);
 }
 
 .button_icon.destuctive {
-  stroke: var(--theme-text-on-destructive);
+  stroke: var(--theme-destructive-text);
 }
 
 .button:disabled {
   background-color: var(--theme-disabled);
-  color: var(--theme-text-on-disabled);
+  color: var(--theme-disabled-text);
 }
 
 .button:disabled .button_icon {
-  stroke: var(--theme-text-on-disabled);
+  stroke: var(--theme-disabled-text);
 }

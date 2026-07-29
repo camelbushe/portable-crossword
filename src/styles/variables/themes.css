@@ -14,15 +14,20 @@
 
   --theme-primary: var(--color-blue-500);
   --theme-secondary: var(--color-gray-200);
-  --theme-secondary-hover-light: var(--color-gray-100);
-  --theme-secondary-hover-dark: var(--color-gray-300);
   --theme-destructive: var(--color-red-500);
   --theme-disabled: var(--color-gray-400);
 
-  --theme-text-on-primary: var( --color-white);
-  --theme-text-on-secondary: var(--color-gray-900);
-  --theme-text-on-destructive: var(--color-white);
-  --theme-text-on-disabled: var(--color-white);
+  --theme-on-secondary: var(--color-gray-150);
+
+  --theme-secondary-hover-light: var(--color-gray-100);
+  --theme-secondary-hover-dark: var(--color-gray-300);
+
+  --theme-primary-text: var( --color-white);
+  --theme-secondary-text: var(--color-gray-900);
+  --theme-destructive-text: var(--color-white);
+  --theme-disabled-text: var(--color-white);
+
+ --theme-on-secondary-text: var(--color-gray-900);
 
   --spacing-small: 5px;
   --spacing-medium: 10px;

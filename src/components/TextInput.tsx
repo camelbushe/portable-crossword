@@ -7,9 +7,15 @@ import { memo, type ComponentPropsWithRef } from "react";
 
 import "../styles/components/text-input.css"
 
-const TextInput = memo(({ ...props }: ComponentPropsWithRef<'input'>) => {
+interface TextInputProps extends ComponentPropsWithRef<'input'> {
+  color?: "secondary" | "on-secondary"
+}
+
+const TextInput = memo(
+  ({ className, color = "secondary", ...props }: TextInputProps) => {
   return (
-    <input {...props} className="text-input" type="text" />
+    <input 
+      className={`text-input ${color} ${className}`} type="text" {...props} />
   )
 })
 
