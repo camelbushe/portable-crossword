@@ -1,17 +1,30 @@
-import { memo, type ReactNode } from "react";
+import { memo, useState, type ReactNode } from "react";
 
-interface Tab {
-  title: string,
-  content: ReactNode
-}
+import "../styles/components/tabs.css"
 
 interface TabsProps {
-  tabs: Array<Tab>,
+  children: Array< ReactNode>,
+  titles: Array<string>,
+  initialTabIndex?: number
 }
 
-const Tabs = memo(({ tabs }: TabsProps) => {
+const Tabs = memo(({ children, titles, initialTabIndex = 0 }: TabsProps) => {
+  const [currentTabIndex, setCurrentTabIndex] = useState(initialTabIndex)
+
   return (
     <div className="tabs">
+      <ul className="tabs_titles">
+        {titles.map((title, index) =>
+          <li className={`
+              tabs_title ${index == currentTabIndex ? "selected" : ""}
+            `} onClick={() => setCurrentTabIndex(index)}>
+            {title}
+          </li>
+        )}
+      </ul>
+      <div className="tabs_content">
+        {children[currentTabIndex]}
+      </div>
     </div>
   )
 })
