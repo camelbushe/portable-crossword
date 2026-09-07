@@ -6,7 +6,7 @@
 import { memo, useState, type ReactElement } from "react";
 import { useOutsideClick } from "../hooks/useOutsideClick";
 
-import ArrowUp from "./icons/ArrowUp";
+import ArrowUp from "./icons/Arrow";
 import ArrowDown from "./icons/ArrowDown";
 import Tick from "./icons/Tick";
 
@@ -35,9 +35,8 @@ function DropdownComponent<T>(
 
   return (
     <div className="dropdown" ref={dropdownRef}>
-      <div className="dropdown_header" onClick={() =>
-        setIsBodyOpen(!isBodyOpen)
-      }
+      <div className="dropdown_header" 
+        onClick={() => setIsBodyOpen(!isBodyOpen)}
       >
         {values[selectedIndex].title}
         {isBodyOpen ? <ArrowUp /> : <ArrowDown />}

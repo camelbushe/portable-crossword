@@ -9,11 +9,11 @@
   display: flex;
   margin-bottom: var(--spacing-large);
   background-color: var(--theme-secondary);
-  border-radius: var(--border-radius-medium);
   font-family: var(--font-family-main);
   font-size: var(--font-size-medium);
   font-weight: var(--font-weight-medium);
   padding: var(--spacing-small);
+  border-radius: calc(var(--border-radius-medium) + var(--spacing-small));
 }
 
 .tabs_title {

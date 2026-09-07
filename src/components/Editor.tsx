@@ -16,6 +16,7 @@ import "../styles/reset.css"
 import "../styles/fonts.css"
 import "../styles/components/editor.css"
 import Tabs from "./Tabs";
+import Accordion from "./Accordion";
 
 const CommonWordTab = () => {
     return (
@@ -41,8 +42,20 @@ const ClassicWordTab = () => {
 }
 
 const ThemeTab = () => {
+    const titles = ["Палитра", "Темы"]
+
     return (
-        <div>Theme</div>
+        <Accordion initialOpenElementIds={[
+            "colors",
+            "typography",
+            "geometry",
+            "custom"
+        ]}>
+           <Accordion.Element title="Colors" id="colors">There are colors here</Accordion.Element>
+           <Accordion.Element title="Typography" id="typography">There are typography here</Accordion.Element>
+           <Accordion.Element title="Geometry" id="geometry">There are geometry here</Accordion.Element>
+           <Accordion.Element title="Custom" id="custom">There are custom variables here</Accordion.Element>
+        </Accordion>
     )
 }
 

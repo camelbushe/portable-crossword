@@ -1,12 +1,13 @@
 /**
- * Copyright (C) 2026 camelbushe (https://github.com/camelbushe/portable-crossword)
+ * Copyright (C) 2026 camelbushe 
+ * (https://github.com/camelbushe/portable-crossword)
  * Licensed under GNU General Public License v3.0 only.
  */
 
 import { memo } from "react";
 import type { SVGProps } from "../../types";
 
-const ArrowUp = memo(({ className }: SVGProps) => {
+const Arrow = memo(({ className }: SVGProps) => {
   return (
     <svg
       className={className}
@@ -22,4 +23,4 @@ const ArrowUp = memo(({ className }: SVGProps) => {
 })
 
 
-export default ArrowUp;
+export default Arrow;
