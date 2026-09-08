@@ -21,7 +21,7 @@ interface AccordionProps {
   allElementsOpened?: boolean
 }
 
-interface AccordionElementProps {
+interface ElementProps {
   children: ReactNode,
   title: string,
   id: string
@@ -54,7 +54,7 @@ const Accordion = (
   )
 }
 
-Accordion.Element = ({ children, title, id }: AccordionElementProps) => {
+Accordion.Element = ({ children, title, id }: ElementProps) => {
   const context = useContext(AccordionContext);
   const isElementOpen = context?.openElementIds.includes(id);
 

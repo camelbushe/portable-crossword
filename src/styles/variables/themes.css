@@ -1,5 +1,6 @@
 /**
- * Copyright (C) 2026 camelbushe (https://github.com/camelbushe/portable-crossword)
+ * Copyright (C) 2026 camelbushe 
+ * (https://github.com/camelbushe/portable-crossword)
  * Licensed under GNU General Public License v3.0 only.
  */
 
@@ -33,6 +34,7 @@
   --spacing-medium: 10px;
   --spacing-large: 15px;
 
+  --border-radius-xs: 3px;
   --border-radius-small: 15px;
   --border-radius-medium: 25px;
 

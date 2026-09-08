@@ -17,6 +17,7 @@ import "../styles/fonts.css"
 import "../styles/components/editor.css"
 import Tabs from "./Tabs";
 import Accordion from "./Accordion";
+import VariableEditor from "./VariableEditor";
 
 const CommonWordTab = () => {
     return (
@@ -42,7 +43,11 @@ const ClassicWordTab = () => {
 }
 
 const ThemeTab = () => {
-    const titles = ["Палитра", "Темы"]
+    const colorsVariables = [
+        { identifier: "--color-gray-150", value: "#dcdbf0" },
+        { identifier: "--color-blue-500", value: "#6366f1"},
+        { identifier: " --color-gray-900", value: "#2a2631" }
+    ]
 
     return (
         <Accordion initialOpenElementIds={[
@@ -51,7 +56,9 @@ const ThemeTab = () => {
             "geometry",
             "custom"
         ]}>
-           <Accordion.Element title="Colors" id="colors">There are colors here</Accordion.Element>
+           <Accordion.Element title="Colors" id="colors">
+                <VariableEditor variables={colorsVariables} />
+           </Accordion.Element>
            <Accordion.Element title="Typography" id="typography">There are typography here</Accordion.Element>
            <Accordion.Element title="Geometry" id="geometry">There are geometry here</Accordion.Element>
            <Accordion.Element title="Custom" id="custom">There are custom variables here</Accordion.Element>
